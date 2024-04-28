@@ -20,5 +20,12 @@ import CommentEdit from "./component/comment/UpdateComment";
 
 export const App = () => <Admin dataProvider={dataProvider}>
   <Resource name="posts" list={PostList} edit={PostUpdate} create={CreatePost} >
- 
+  <Route path=":id/comments">
+    <CommentList />
+    <CreateComment/>
+    <CommentEdit/>
+  </Route>
+  </Resource>
+  
+  <Resource name="users" list={ListGuesser} edit={EditGuesser} show={ShowGuesser} />
 </Admin>;
